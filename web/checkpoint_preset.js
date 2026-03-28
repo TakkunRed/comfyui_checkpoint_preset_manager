@@ -9,7 +9,6 @@ app.registerExtension({
             nodeType.prototype.onNodeCreated = function () {
                 const r = onNodeCreated ? onNodeCreated.apply(this, arguments) : undefined;
 
-                // --- memoウィジェット（入力欄） ---
                 const memoWidget = this.widgets.find(w => w.name === "memo");
                 if (memoWidget) {
                     memoWidget.type = "customtext";
@@ -20,20 +19,18 @@ app.registerExtension({
                             memoWidget.inputEl.style.fontSize = "12px";
                             memoWidget.inputEl.style.marginTop = "4px";
                             memoWidget.inputEl.style.marginBottom = "0px";
-                            memoWidget.inputEl.placeholder = "メモを入力...";
+                            memoWidget.inputEl.placeholder = "enter note...";
                         }
                     }, 20);
                 }
 
-                // --- 黒い掲示板（ステータス表示） ---
                 const el = document.createElement("div");
                 el.style.color = "#00FF00";
                 el.style.backgroundColor = "black";
                 el.style.padding = "8px";
                 
-                // --- 物理的な位置調整（ここが重要） ---
                 el.style.position = "relative";
-                el.style.top = "-25px"; // 上に25px強制的に持ち上げて隙間を消す
+                el.style.top = "-25px";
                 el.style.margin = "0 auto"; 
                 
                 el.style.width = "calc(100% - 24px)";
@@ -51,7 +48,6 @@ app.registerExtension({
                 this.addDOMWidget("STATUS_DISPLAY", "display", el);
                 this.status_div = el;
 
-                // --- 全体の高さも詰まった分だけ短縮 ---
                 this.setSize([380, 545]); 
                 return r;
             };
