@@ -28,30 +28,30 @@ Tired of re-entering the "sweet spot" settings every time you switch models? Thi
 ## How to Use
 1. Saving a New Preset
     * Set the mode to use_ui.
-    * Connect your Load Checkpoint node to the ckpt_name input.
-    * Adjust the parameters (Steps, CFG, etc.) and type your notes in the memo box.
-    * Set save to true and click Queue Prompt.
+    * Connect your Load Checkpoint node to the `ckpt_name` input.
+    * Adjust the parameters (`Steps`, `CFG`, etc.) and type your notes in the `memo` box.
+    * Set `save` to true and click Queue Prompt.
     * The status board will change color and display (SAVED!).
 
 2. Loading an Existing Preset
-    * Set the mode to use_preset.
+    * Set the mode to `use_preset`.
     * Whenever you change the Checkpoint, the node will automatically look up the saved values.
     * The status board will display the currently active preset values.
 
 ## Node Input/Output
 1. Inputs
-    * ckpt_name: The name of the model (linked to the preset).
-    * steps, cfg, sampler_name, scheduler: Core generation parameters.
-    * width, height: Preferred resolution.
-    * memo: Notes or reminders for the model.
+    * `ckpt_name`: The name of the model (linked to the preset).
+    * `steps`, `cfg`, `sampler_name`, `scheduler`: Core generation parameters.
+    * `width`, `height`: Preferred resolution.
+    * `memo`: Notes or reminders for the model.
 
 2. Outputs
-    * steps, cfg, sampler_name, scheduler, width, height, memo: The active values to be passed to other nodes (like KSampler or Empty Latent Image).
+    * `steps`, `cfg`, `sampler_name`, `scheduler`, `width`, `height`, `memo`: The active values to be passed to other nodes (like KSampler or Empty Latent Image).
 
 ## File Structure
-* checkpoint_preset.py: Main node logic and backend processing.
-* web/checkpoint_preset.js: UI customization and front-end layout control.
-* presets.json: The database where your settings are stored (auto-generated).
+* `checkpoint_preset.py`: Main node logic and backend processing.
+* `web/checkpoint_preset.js`: UI customization and front-end layout control.
+* `presets.json`: The database where your settings are stored (auto-generated).
 
 ## License
 This project is licensed under the MIT License.
