@@ -1,0 +1,16 @@
+{
+    "node_class_mappings": {
+        "CheckpointPresetNode": "CheckpointPresetNode"
+    },
+    "extension_mangling": true,
+    "web_extensions": [
+        {
+            "name": "Comfy.CheckpointPresetManager",
+            "path": "web"
+        }
+    ],
+    "title": "Checkpoint Preset Manager",
+    "description": "A custom node for ComfyUI designed to manage and automate optimal settings for different Checkpoints. It allows you to save and recall specific parameters—including steps, CFG, samplers, schedulers, and resolutions—linked directly to the model name.",
+    "author": "Takkun",
+    "version": "1.0.0"
+}
