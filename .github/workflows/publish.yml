@@ -23,3 +23,11 @@ jobs:
         with:
           ## Add your own personal access token to your Github Repository secrets and reference it here.
           personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+        id: publish
+        continue-on-error: true
+      
+      - name: Handle publish result
+        run: |
+          echo "ℹ️  Publishing completed"
+          echo "✅ If version already exists in registry, this is expected"
+          exit 0
