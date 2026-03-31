@@ -11,7 +11,7 @@ class CheckpointPresetNode:
         schedulers = comfy.samplers.KSampler.SCHEDULERS
         return {
             "required": {
-                "ckpt_name": ("STRING", {"forceInput": True}),
+                "ckpt_name": ("STRING", {"default": ""}),
                 "mode": (["use_preset", "use_ui"], {"default": "use_preset"}),
                 "steps": ("INT", {"default": 20, "min": 1, "max": 10000}),
                 "cfg": ("FLOAT", {"default": 7.0, "min": 0.0, "max": 100.0, "step": 0.1, "round": 0.01}),
