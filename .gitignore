@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+presets.json
+presets.json.bak
+*.tmp
